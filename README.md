@@ -1,2 +1,2 @@
-# search-system
-this is a simple search system
+# project
+simple group project for school
