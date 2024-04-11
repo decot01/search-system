@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Самый лучший сайт</title>
+    <meta charset ="utf-8"> 
+    <link rel='stylesheet' href='settings.css'>
+
+</head>
+<body>
+
+    <div class='header'>
+
+            <div class="containerclock">
+                <div class="clock">
+                    <span id="hrs">00</span>
+                    <span>:</span>
+                    <span id="min">00</span>
+                    <span>:</span>
+                    <span id="sec">00</span>
+                </div>
+            </div>
+            <div class='settings'>
+
+                    <label for="switch1">white/black theme</label>
+                    <input type="checkbox" id="white">
+                    <input type="checkbox" id="black">
+
+                
+                <!-- Второй свич -->
+
+                    <label for="switch2">ru/eng language</label>
+                    <input type="checkbox" id="ru">
+                    <input type="checkbox" id="eng">
+
+                
+                <!-- Ползунок (Slider) с 4 разметками -->
+
+                    <label for="slider">font size</label>
+                    <input type="range" id="slider" class="slider" min="1" max="4" step="1">
+    
+            </div>  
+    </div>
+
+    <script src="code.js"></script>
+    <script src='https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js'></script>
+</body>
