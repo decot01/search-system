@@ -10,7 +10,7 @@
 <body>
 
     <div class='header'>
-            <div class="container">
+            <div class="containerclock">
                 <div class="clock">
                     <span id="hrs">00</span>
                     <span>:</span>
@@ -54,39 +54,18 @@
             </ul>
         </div>
 
-
-
-        <div class="card">
-            <div class="search">
-                <input class="search input" type="text" placeholder="enter city name" spellcheck="false">
-                <button class="search button"><img src="images/search.png"></button>
+        <div class="container">
+            <p>Enter your text or URL</p>
+            <input type="text" placeholder="Text or URL" id="qrText">
+        
+            <div id="imgBox">
+                <img src="" id="qrImage">
             </div>
-            <div class="error">
-                <p>Invalid city name</p>
-            </div>
-            <div class="weather">
-                <img src="images/rain.png" class="weather-icon">
-                <h1 class="temp">22°c</h1>
-                <h2 class="city">New York</h2>
-                <div class="details">
-                    <div class="col">
-                        <img src="images/humidity.png">
-                        <div>
-                            <p class="humidity">50%</p>
-                            <p>Humidity</p>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <img src="images/wind.png">
-                        <div>
-                            <p class="wind">15 km/h</p>
-                            <p>Wind Speed</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        
+            <button onclick="generateQR()">Generate QR Code</button>
         </div>
     </div>
 
     <script src="code.js"></script>
+    <script src='https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js'></script>
 </body>

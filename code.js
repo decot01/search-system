@@ -1,3 +1,23 @@
+// поиск///////////////////////////////////////////////////////////////////////////////////
+// Находим элементы формы
+const form = document.querySelector(".searcher");
+const input = form.querySelector("input");
+const button = form.querySelector("button");
+
+// Добавляем обработчик события на кнопку "Искать!"
+button.addEventListener("click", function(event) {
+    event.preventDefault(); // Предотвращаем действие по умолчанию (отправку формы)
+
+    // Вызываем функцию для поисковой строки браузера
+    searchQuery(input.value);
+});
+
+// Функция для создания поисковой строки браузера
+function searchQuery(query) {
+    let searchUrl = "https://www.google.com/search?q=" + encodeURIComponent(query);
+    window.location.href = searchUrl;
+}
+
 // часы///////////////////////////////////////////////////////////////////////////////////
 let hrs = document.getElementById("hrs");
 let min = document.getElementById("min");
@@ -63,54 +83,31 @@ date.innerHTML = (today.getDate()<10?"0":"") + today.getDate();
 day.innerHTML = weekDays[today.getDay()];
 month.innerHTML = allMonths[today.getMonth()];
 year.innerHTML = today.getFullYear();
-//weather////////////////////////////////////////////////////////////////////////////////
-const apiKey = "863242cfb2b1d357e6093d9a4df19a4b";
-const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
+//qr////////////////////////////////////////////////////////////////////////////////
+let imgBox = document.getElementById("imgBox");
+let qrImage = document.getElementById("qrImage");
+let qrText = document.getElementById("qrText");
 
-const searchBox = document.querySelector(".search input");
-const searchBtn = document.querySelector(".search button");
-const weatherIcon = document.querySelector(".weather-icon");
+function generateQR(){
+    if(qrText.value.length > 0){
+        qrImage.src = "https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=" + qrText.value;
+        imgBox.classList.add("show-img");
 
-async function checkWeather(city){
-    const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
+        const containerAnimation = anime({
+            targets: '.container',
+            height: '350px',
+            easing: 'linear',
+            duration: 300 
+          });
 
-    if(response.status == 404){
-        document.querySelector(".error").style.display = "block";
-        document.querySelector(".weather").style.display = "none";
+        containerAnimation.restart();  
+        
+
     }else{
-        var data = await response.json();
-
-document.querySelector(".city").innerHTML = data.name;
-document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°c";
-document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
-document.querySelector(".wind").innerHTML = data.wind.speed + " km/h";
-
-if(data.weather[0].main == "Clouds"){
-    weatherIcon.src = "images/clouds.png";
-}
-else if(data.weather[0].main == "Clear"){
-    weatherIcon.src = "images/clear.png";
-}
-else if(data.weather[0].main == "Rain"){
-    weatherIcon.src = "images/rain.png";
-}
-else if(data.weather[0].main == "Drizzle"){
-    weatherIcon.src = "images/drizzle.png";
-}
-else if(data.weather[0].main == "Mist"){
-    weatherIcon.src = "images/mist.png";
-}
-
-document.querySelector(".weather").style.display = "block";
-document.querySelector(".error").style.display = "none";
-
+        qrText.classList.add('error');
+        setTimeout(()=>{
+            qrText.classList.remove('error');
+        },1000);
     }
-
     
-
-}
-
-
-searchBtn.addEventListener("click", ()=>{
-    checkWeather(searchBox.value);
-})
+};
