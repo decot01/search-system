@@ -233,7 +233,7 @@ body {
     transform: translate(-50%,-50%);
     background: #fff;
     border-radius: 10px;
-    margin: 100px 420px 20px;
+    margin: 90px 420px 20px;
 }
 .container p{
     font-weight: 600;
@@ -316,6 +316,17 @@ body {
     cursor: pointer;
 }
 .settingsbutton:active {
+    transition-property: box-shadow, transform;
+    box-shadow: none;
+    transform: none;
+    cursor: pointer;
+}
+button:hover{
+    transform: scale(1.05) ;
+    transition-duration: 0.2s;
+    cursor: pointer;
+}
+button:active {
     transition-property: box-shadow, transform;
     box-shadow: none;
     transform: none;
