@@ -6,9 +6,7 @@
 }
 
 
-.settings{
-    margin: 100px 550px 1000px;   
-}
+
 /* часы */
 
 body {
@@ -18,54 +16,54 @@ body {
     color: #fff;
     position: relative;
 }
-.containerclock{
-    width: 350px;
-    height: 100px;
-    position: absolute;
-    top: 9%;
-    left: 50%;
-    transform: translate(-50%,-50%);
+
+.settings{
+    margin: 100px 560px 30px;   
 }
-.clock{
-    width: 100%;
-    height: 100%;
-    background: rgba(235, 0, 255, 0.11);
-    border-radius: 10px;
+.language{
+    display: flex; 
+}
+.theme{
+    display: flex;  
+}
+.undermenu{
     display: flex;
-    align-items: center;
-    justify-content: center;
-    backdrop-filter: blur(40px);
 }
 
-.clock span{
-    font-size: 80px;
-    width: 110px;
-    display: inline-block;
-    text-align: center;
-    position: relative;
+.form_radio input[type=radio] {
+	display: none;
 }
-.clock span::after{
-    
-    font-size: 16px;
-    position: absolute;
-    bottom: -5px;
-    left: 50%;
-    transform: translateX(-50%);
+.form_radio label {
+	display: inline-block;
+	cursor: pointer;
+	position: relative;
+	padding-left: 25px;
+	margin-right: 0;
+	line-height: 18px;
+	user-select: none;
 }
-#hrs::after{
-    content: 'HOURS';
+.form_radio label:before {
+	content: "";
+	display: inline-block;
+	width: 17px;
+	height: 18px;
+	position: absolute;
+	left: 0;
+	bottom: 1px;
+	background: url(/img/radio-1.png) 0 0 no-repeat;
 }
-#min::after{
-    content: 'MINS';
+ 
+/* Checked */
+.form_radio input[type=radio]:checked + label:before {
+	background: url(/img/radio-2.png) 0 0 no-repeat;
 }
-#sec::after{
-    content: 'SEC';
+ 
+/* Hover */
+.form_radio label:hover:before {
+	filter: brightness(120%);
 }
-.watch-link{
-    position: fixed;
-    bottom: 10%;
-    right: 5%;
-    font-size: 12px;
-    text-decoration: none;
-    color: #fff;
+ 
+/* Disabled */
+.form_radio input[type=radio]:disabled + label:before {
+	filter: grayscale(100%);
 }

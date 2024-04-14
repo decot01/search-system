@@ -9,38 +9,37 @@
 </head>
 <body>
 
-    <div class='header'>
-
-            <div class="containerclock">
-                <div class="clock">
-                    <span id="hrs">00</span>
-                    <span>:</span>
-                    <span id="min">00</span>
-                    <span>:</span>
-                    <span id="sec">00</span>
-                </div>
-            </div>
             <div class='settings'>
-
-                    <label for="switch1">white/black theme</label>
-                    <input type="checkbox" id="white">
-                    <input type="checkbox" id="black">
-
+                <div class='theme'>
+                    <input type="radio" id="white">
+                    <input type="radio" id="black">
+                    <label for="white">white//</label>
+                    <label for="black">black</label>
+                </div>
                 
                 <!-- Второй свич -->
-
-                    <label for="switch2">ru/eng language</label>
-                    <input type="checkbox" id="ru">
-                    <input type="checkbox" id="eng">
-
                 
+                <div class='language'>
+                    <input type="radio" id="ru">
+                    <input type="radio" id="eng">
+                    <label for="ru">ru//</label>
+                    <label for="eng">eng</label>
+                </div>
+                    
                 <!-- Ползунок (Slider) с 4 разметками -->
 
                     <label for="slider">font size</label>
                     <input type="range" id="slider" class="slider" min="1" max="4" step="1">
-    
-            </div>  
-    </div>
+
+
+                <div class='undermenu'>
+                <a href="main.html">   
+                <button href="main.html">сохранить</button>
+                <button href="main.html">назад</button>
+                </a>
+                </div>
+            </div>
+
 
     <script src="code.js"></script>
     <script src='https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js'></script>
