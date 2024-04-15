@@ -31,7 +31,7 @@
 
 body {
     width: 100%;
-    min-height: 100vh;
+    min-height: 120vh;
     background: linear-gradient(45deg, #08001f, #30197d);
     color: #fff;
     position: relative;
@@ -233,7 +233,8 @@ body {
     transform: translate(-50%,-50%);
     background: #fff;
     border-radius: 10px;
-    margin: 90px 420px 20px;
+    margin: 40px 420px 0px;
+
 }
 .container p{
     font-weight: 600;
@@ -303,7 +304,7 @@ body {
 .settingsbutton{
     width:50px;
     height:50px ;
-    margin: -310px 590px 10px;
+    margin: -370px 590px 10px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -321,6 +322,29 @@ body {
     transform: none;
     cursor: pointer;
 }
+
+.calculatorbutton{
+    width:50px;
+    height:50px ;
+    margin: -370px -650px 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.calculatorbutton:hover{
+    transform: scale(1.05) rotate(5deg);
+    transition-duration: 0.2s;
+    cursor: pointer;
+}
+.calculatorbutton:active {
+    transition-property: box-shadow, transform;
+    box-shadow: none;
+    transform: none;
+    cursor: pointer;
+}
+
 button:hover{
     transform: scale(1.05) ;
     transition-duration: 0.2s;
